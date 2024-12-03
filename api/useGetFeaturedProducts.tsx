@@ -13,7 +13,6 @@ export function useGetFeaturedProducts () {
             try {
              const res = await fetch(url) 
              const json = await res.json()
-             console.log("ESTEEL EL JASON]",json)
              setResult(json.data) 
              setLoading(false)
             } catch (error: any) {

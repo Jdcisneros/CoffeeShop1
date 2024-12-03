@@ -10,22 +10,24 @@ import { Card, CardContent } from "./ui/card";
 import { Expand, ShoppingCart } from "lucide-react";
 import Iconbutton from "./icon-button";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/hooks/use-cart";
 
 const FeaturedProducts = () => {
   const { loading, result }: ResponseType = useGetFeaturedProducts();
 
   const router = useRouter();
-  console.log(result);
+  const {addItem} = useCart()
+ 
   return (
     <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
       <h3 className="px-6 text-3xl sm:pb-8">Productos destacados</h3>
       <Carousel>
         <CarouselContent className="-ml-2 md:-ml-4">
-          {loading && <SkeletonSchema grid={3} />}
+          {loading && (<SkeletonSchema grid={3} />)}
           {result !== null &&
             result.map((product: ProductType) => {
               const { attributes, id } = product;
-              console.log("este es el product", product);
+            
               const { slug, images, productName, taste, origin } = attributes;
               return (
                 <CarouselItem
@@ -43,12 +45,12 @@ const FeaturedProducts = () => {
                         <div className="absolute w-full px-6 transition duration-200 opacity-0  group-hover:opacity-100 bottom-5">
                           <div className="flex justify-center gap-x-6 ">
                             <Iconbutton
-                              onClick={() => router.push(`products/${slug}`)}
+                              onClick={() => router.push(`product/${slug}`)}
                               icon={<Expand size={20} />}
                               className="text-gray-600 hover:scale-125"
                             />
                             <Iconbutton
-                              onClick={() => console.log("add item")}
+                              onClick={() => addItem(product)}
                               icon={<ShoppingCart size={20} />}
                               className="text-gray-600 hover:scale-125"
                             />

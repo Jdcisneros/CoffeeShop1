@@ -6,17 +6,17 @@ export type ProductType = {
         description:string;
         active:boolean;
         isFeatured:boolean;
-        tasste:string;
+        taste:string;
         origin:string,
-        prince:number;
-        image: {
+        price:number;
+        images: {
             data: {
                 id:number,
                 attributes: {
                     url:string
                 }
-            }
-        }
+            }[];
+        };
         category: {
             data: {
                 attributes: {
