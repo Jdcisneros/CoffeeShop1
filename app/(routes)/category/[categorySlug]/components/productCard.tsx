@@ -40,7 +40,7 @@ const ProductCard = (props: ProductCardProps) => {
       className="w-full max-w-sm"
       >
         <CarouselContent>
-            {product.attributes.images.data.map((image)=> (
+            {product?.attributes?.images?.data?.map((image)=> (
                 <CarouselItem key={image.id} className="group">
                     <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`} alt="Image" className="rounded-xl" />
                     <div className="absoulte w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 gap-x-6">

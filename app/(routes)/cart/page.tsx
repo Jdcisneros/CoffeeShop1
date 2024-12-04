@@ -14,8 +14,7 @@ export default function Page() {
 
   const prices = items.map((product) => product.attributes.price);
   const totalPrice = prices.reduce((total, price) => total + price, 0);
-  const stripePromise = loadStripe("pk_test_51QRlfVABogrp7lDZppnGgqYNR4xafcnjNNJM7vGLYq8EV9GzymivkN9bif3LpDEbYEHaD3LzA8NMmGrzKqQGuLC30050yvd6ES")
-  console.log(process.env.NEXT_PUIBLIC_STRIPE_PUBLISHABLE_KEY)
+  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY|| "")
 
   const buyStripe = async () => {
     try {
