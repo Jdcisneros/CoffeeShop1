@@ -79,7 +79,7 @@ const MenuList = () => {
           <NavigationMenuTrigger>Cafés</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {cafes.map((cafe) => (
+              {cafes?.map((cafe) => (
                 <ListItem key={cafe.title} title={cafe.title} href={cafe.href} className="hover:bg-neutral-600/50">
                   {cafe.description}
                 </ListItem>

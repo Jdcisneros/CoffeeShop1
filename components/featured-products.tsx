@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
         <CarouselContent className="-ml-2 md:-ml-4">
           {loading && (<SkeletonSchema grid={3} />)}
           {result !== null &&
-            result.map((product: ProductType) => {
+            result?.map((product: ProductType) => {
               const { attributes, id } = product;
             
               const { slug, images, productName, taste, origin } = attributes;

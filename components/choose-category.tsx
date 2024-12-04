@@ -17,7 +17,7 @@ const ChooseCategry = () => {
         <div className="grid gap-5 sm:grid-cols-3">
           {!loading &&
             result !== undefined &&
-            result.map((category: CategoryType) => (
+            result?.map((category: CategoryType) => (
               <Link
                 key={category.id}
                 href={`/category/${category.attributes.slug}`}

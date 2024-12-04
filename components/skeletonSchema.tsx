@@ -7,7 +7,7 @@ type SkeletonSchemaProps = {
 const SkeletonSchema = ({ grid }: SkeletonSchemaProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"> {/* Espaciado adecuado */}
-      {Array.from({ length: grid }).map((_, index) => (
+      {Array.from({ length: grid })?.map((_, index) => (
         <div
           key={index}
           className="flex flex-col gap-4 mx-auto space-y-3"  // Espaciado ajustado

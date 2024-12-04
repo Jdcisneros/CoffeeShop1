@@ -55,7 +55,7 @@ function Carrousel() {
         ]}
       >
         <CarouselContent>
-          {dataCarroucel.map(({ id, title, description, link }) => (
+          {dataCarroucel?.map(({ id, title, description, link }) => (
             <CarouselItem
               key={id}
               onClick={() => router.push(link)}

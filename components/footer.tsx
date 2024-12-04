@@ -40,7 +40,7 @@ function Footer() {
                 </p>
 
                 <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-900 sm:mb-0 dark:text-gray-400">
-    {dataFooter.map((data)=> (
+    {dataFooter?.map((data)=> (
         <li key={data.id}>
             <Link href={data.link} className="hover:underline me-4 md:me-6">{data.name}</Link>
         </li>
